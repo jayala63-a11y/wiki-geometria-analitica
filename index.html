@@ -141,7 +141,7 @@
   langBtn.addEventListener('click',()=>{const next=document.body.dataset.lang==='es'?'en':'es';setLanguage(next);const footer=document.querySelector('.footer');footer.innerHTML=footer.innerHTML.replace('Ariel Enrique Salas Julio.','Ariel Enrique Salas Julio '+(next==='en'?'and':'y')+' Julian David Orozco.');});
   function updateReadout(){if(document.body.dataset.lang!=='en')return;const v=slider.value;readout.textContent=kind.value==='circle'?`Radius r = ${v}. Every point on the circle is this distance from the center.`:kind.value==='parabola'?`Parameter p = ${v}. The parabola widens as p increases.`:kind.value==='ellipse'?`Major semi-axis a = ${v}; minor semi-axis b = ${(v*.62).toFixed(2)}. The sum of distances to the foci is constant.`:`Semi-axis a = ${v}. The hyperbola has two branches and asymptotes.`}
   slider.addEventListener('input',updateReadout);kind.addEventListener('change',updateReadout);
-  document.querySelectorAll('.exercise p').forEach(p=>p.dataset.spanish=p.innerHTML);document.querySelectorAll('.mini-figure figcaption').forEach(el=>el.dataset.spanish=el.textContent);
+  document.querySelectorAll('.exercise p').forEach(p=>p.dataset.spanish=p.innerHTML);document.querySelectorAll('.mini-figure figcaption').forEach(el=>el.dataset.spanish=el.textContent);setLanguage('es');document.querySelector('.footer').innerHTML='<strong>GEOMETRÍA ANALÍTICA</strong> · Wiki de cónicas · Fundación Universitaria del Área Andina<br>Contenido preparado por John Albert Ayala García, Ariel Enrique Salas Julio y Julian David Orozco.';
   document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{document.querySelectorAll('.nav a').forEach(n=>n.classList.remove('active'));a.classList.add('active')}));
 </script>
 </body>
